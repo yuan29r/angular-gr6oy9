@@ -17,11 +17,9 @@ export class ProductAlertsComponent implements OnInit {
 
 }
 /**
- * 輸入Input
+ * 輸入
  * import { Input } from '@angular/core';
  * 在class put @Input product 這句話表示資料來來源是父組件來
- * 
- * 輸出Output
+ * 輸出
  * import { Output, EventEmitter } from '@angular/core';
- * 在class @Output() notify = new EventEmitter();
  *  */

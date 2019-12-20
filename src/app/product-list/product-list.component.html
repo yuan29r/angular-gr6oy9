@@ -1,9 +1,9 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of products;index as productId">
 
   <h3>
-    <a [title]="product.name+' details'">
+    <a [title]="product.name+' details'" [routerLink]="['/products', productId]">
       {{ product.name }}
     </a>
   </h3>
@@ -50,6 +50,11 @@ can be found in the LICENSE file at http://angular.io/license
 插補 {{ }}
 屬性綁定 [ ]
 事件綁定 ( )
+
+下個單元才會提起
+routerLink
+*ngFor="index as productId"  把index做成 productId
+在<a>加入屬性 [routerLink]="['/products', productId]"
 
 src / app / product-list / product-list.component.html 
 -->
