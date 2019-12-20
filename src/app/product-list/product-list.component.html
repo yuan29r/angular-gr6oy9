@@ -3,7 +3,7 @@
 <div *ngFor="let product of products">
 
   <h3>
-    <a [title]="product.name + ' details'">
+    <a [title]="product.name+' details'">
       {{ product.name }}
     </a>
   </h3>
@@ -15,7 +15,9 @@
   <button (click)="share()">
     Share
   </button>
-
+  <!-- 增加提示訊息大於700提醒-->
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
 </div>
 
 
@@ -23,4 +25,31 @@
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
+-->
+<!--
+*ngFor是“結構指令”。
+結構化指令通常通過添加，刪除和操作它們所附加的元素來塑造或重塑DOM的結構。
+任何帶有星號的*指令都是結構指令。 
+
+要顯示產品名稱，請使用插值語法{{ }}。
+插值將屬性的值呈現為文本。在中<div>添加一個<h3>以顯示產品的name屬性的插值
+
+要使每個產品名稱成為產品詳細信息的鏈接，請使用屬性綁定語法添加元素並將其標題設置為產品名稱，
+如：<a [title]="product.name+' details'"></a> 
+屬性要異動值要把那個屬性用[]包起來再給值的意思嗎?
+
+*ngIf 表示有值才會進去顯示，所以是一種判斷
+產品的description屬性為空，因此Angular不會創建<p>元素，包括單詞“ Description”。
+
+將按鈕的click事件綁定到share()方法  
+事件綁定( )在事件周圍使用一組括號 例如<button (click)="share()"></button>
+
+在此過程中，您學習了使用Angular模板語法的五個常見功能：
+*ngFor
+*ngIf
+插補 {{ }}
+屬性綁定 [ ]
+事件綁定 ( )
+
+src / app / product-list / product-list.component.html 
 -->
